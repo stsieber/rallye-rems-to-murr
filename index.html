@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rallye Rems-to-Murr - Stefans 50. Geburtstag</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <img src="save-the-date.png" alt="Save the Date - Stefan feiert" class="hero-img">
+        </div>
+    </header>
+
+    <main>
+        <section class="intro container">
+            <h1>Stefan wird 50!</h1>
+            <p class="subtitle">Rallye Rems-to-Murr: 19. Juni 2027</p>
+            
+            <div class="invitation-text">
+                <p>Liebe Freunde, liebe Familie,</p>
+                <p>ein halbes Jahrhundert muss gebührend gefeiert werden! Und was passt besser zu mir als eine ordentliche Rallye? Ich lade euch herzlich ein, gemeinsam mit mir den Rems-Murr-Kreis unsicher zu machen.</p>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <strong>Wann?</strong>
+                        <span>19.06.2027 | Start: 14:00 Uhr</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Wo?</strong>
+                        <span>Start in Schorndorf</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Ziel?</strong>
+                        <span>Hinterbüchelberg</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Motto?</strong>
+                        <span>Rallye Rems-to-Murr</span>
+                    </div>
+                </div>
+
+                <p class="placeholder-text">
+                    [Hier ist noch Platz für deinen ganz persönlichen Einladungstext. Erzähl deinen Gästen, worauf sie sich freuen können, was sie mitbringen sollen oder was das Besondere an der Route nach Hinterbüchelberg ist.]
+                </p>
+            </div>
+        </section>
+
+        <section id="registration" class="registration container">
+            <h2>Anmeldung zur Rallye</h2>
+            <p>Bitte melde dich und dein Team bis zum [Datum einfügen] an.</p>
+
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="team_name">Team-Name *</label>
+                    <input type="text" id="team_name" name="team_name" required placeholder="z.B. Die Feuerflitzer">
+                </div>
+
+                <fieldset>
+                    <legend>Fahrer</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="driver_firstname">Vorname *</label>
+                            <input type="text" id="driver_firstname" name="driver_firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="driver_lastname">Nachname *</label>
+                            <input type="text" id="driver_lastname" name="driver_lastname" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Beifahrer</legend>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="co_driver_firstname">Vorname</label>
+                            <input type="text" id="co_driver_firstname" name="co_driver_firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="co_driver_lastname">Nachname</label>
+                            <input type="text" id="co_driver_lastname" name="co_driver_lastname">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Minderjährige Beifahrer (Rücksitz-Crew)</legend>
+                    <div class="form-group">
+                        <label for="kid1">Kind 1 (Vorname)</label>
+                        <input type="text" id="kid1" name="kid1">
+                    </div>
+                    <div class="form-group">
+                        <label for="kid2">Kind 2 (Vorname)</label>
+                        <input type="text" id="kid2" name="kid2">
+                    </div>
+                    <div class="form-group">
+                        <label for="kid3">Kind 3 (Vorname)</label>
+                        <input type="text" id="kid3" name="kid3">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Übernachtung</legend>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="overnight" name="overnight" value="Ja"> Wir möchten übernachten
+                        </label>
+                    </div>
+
+                    <div id="overnight-options" class="hidden">
+                        <p>Wo möchtet ihr schlafen?</p>
+                        <div class="radio-group">
+                            <label><input type="radio" name="accommodation" value="Zelt"> Zelt</label>
+                            <label><input type="radio" name="accommodation" value="Bus"> Bus</label>
+                            <label><input type="radio" name="accommodation" value="Matratzenlager"> Matratzenlager</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Anmeldung absenden</button>
+                </div>
+                
+                <div id="form-status" class="hidden"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2027 Rallye Rems-to-Murr | Stefans 50. Geburtstag</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
