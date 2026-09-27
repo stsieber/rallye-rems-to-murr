@@ -42,25 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
         data.timestamp = new Date().toLocaleString('de-DE');
 
         try {
-            // Die URL wird vom Benutzer nach der Veröffentlichung des Google Apps Scripts hier eingefügt
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwYjLpi_E2gHdTokRmnnQgVleiZTRqDwleChjdsVk7haBjoeH8IeveuQBpiLtJsmvT_/exec';
             
-            if (scriptURL === 'https://script.google.com/macros/s/AKfycbwYjLpi_E2gHdTokRmnnQgVleiZTRqDwleChjdsVk7haBjoeH8IeveuQBpiLtJsmvT_/exec') {
-                console.warn('Google Script URL nicht gesetzt. Simuliere Erfolg für Demo-Zwecke.');
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                showStatus('Erfolg! (Demo-Modus: Script-URL fehlt). Deine Daten wurden lokal erfasst.', 'success');
-            } else {
-                const response = await fetch(scriptURL, {
-                    method: 'POST',
-                    mode: 'no-cors', // Google Apps Script requires no-cors for simple POST
-                    cache: 'no-cache',
-                    body: formData
-                });
-                
-                showStatus('Vielen Dank für deine Anmeldung! Wir freuen uns auf dich.', 'success');
-                rsvpForm.reset();
-                overnightOptions.classList.add('hidden');
-            }
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // Google Apps Script requires no-cors for simple POST
+                cache: 'no-cache',
+                body: formData
+            });
+            
+            showStatus('Vielen Dank für deine Anmeldung! Wir freuen uns auf dich.', 'success');
+            rsvpForm.reset();
+            overnightOptions.classList.add('hidden');
         } catch (error) {
             console.error('Fehler beim Senden:', error);
             showStatus('Ups! Da ist etwas schiefgelaufen. Bitte versuche es später noch einmal.', 'error');
